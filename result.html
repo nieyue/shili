@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta charset="gb2312" />
+<title>在线视力自测中心</title>
+<meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" name="viewport" />
+<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1" media="(device-height: 568px)" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="format-detection" content="address=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/result.css" />
+<style>
+body { background: #FFFFFF; } 
+</style>
+</head>
+<body>
+<div style='margin:0 auto;display:none;'> <img src='img/logo.jpg' /> </div>
+
+
+
+<!--结果-->
+<div class="result_header">当前视力为0.3，近视度数为300度</div>
+<div class="result_content"></div>
+<!--提示-->
+<ul class="result_message">
+  <h3 style="margin-bottom:20px; "><!--麦迪格国际近视矫正中心专家建议您：--></h3>
+  <li> <i></i>
+    <p>您现在症状为近视，建议到近视矫正机构进一步检查和矫正</p>
+  </li>
+  <li> <i></i>
+    <p>少玩手机和电脑，多运动</p>
+  </li>
+  <li> <i></i>
+    <p>近视有危害，请注意饮食和休息</p>
+  </li>
+</ul>
+<ul class="result_message2">
+  <li> <i></i>
+    <p>你视力这么好，分享给小伙伴们，让他们也测下，看看谁的视力更好！</p>
+  </li>
+</ul>
+<!--测试-->
+<div class="text clearfix"> <a href="shili.html">点击测试左眼</a> </div>
+<!--APP-->
+
+<script src="js/jquery-2.1.1.min.js" type="text/javascript"></script> 
+<script src="js/htmlFontSize.js"></script> 
+<script>
+        $(function () {
+            $.getUrlParam = function (name) {
+                var reg = new RegExp("(^|&)" +
+                        name + "=([^&]*)(&|$)");
+                var r = window.location.search.substr(1).match(reg);
+                if (r != null) return unescape(r[2]); return null;
+            }
+            var txt = $.getUrlParam("result");
+            $(".result_content").html(txt);
+            if (txt < 0.12) {
+                $(".result_header").html("近视度数为650度以上");
+            }
+            if (txt == 0.12) {
+                $(".result_header").html("当前视力为0.12，近视度数为600度");
+            }
+            if (txt == 0.15) {
+                $(".result_header").html("当前视力为0.15，近视度数为500度");
+            }
+            if (txt == 0.2) {
+                $(".result_header").html("当前视力为0.2，近视度数为450度");
+            }
+            if (txt == 0.25) {
+                $(".result_header").html("当前视力为0.25，近视度数为400度");
+            }
+            if (txt == 0.3) {
+                $(".result_header").html("当前视力为0.3，近视度数为350度");
+            }
+            if (txt == 0.4) {
+                $(".result_header").html("当前视力为0.4，近视度数为250度");
+            }
+            if (txt == 0.5) {
+                $(".result_header").html("当前视力为0.5，近视度数为200度");
+            }
+            if (txt == 0.6) {
+                $(".result_header").html("当前视力为0.6，近视度数为150度");
+            }
+            if (txt == 0.8) {
+                $(".result_header").html("当前视力为0.8，近视度数为100度");
+            }
+            if (txt >= 1.0) {
+                $(".result_message").hide();
+                $(".result_message2").show();
+                $(".result_header").html("视力不错，继续保持哦！");
+				$(".footer").hide();
+            }
+        });
+    </script>
+  <div class="footer">
+ <!--  <p class="wztt"> 在线报名来麦迪格国际近视矫正中心矫正近视 </p>
+  <p class="wzt"> 7-20岁近视孩子家长陪同到店</br>①免费体验480元9项眼部检查</br>②获取价值168元智能近视防护仪 </br>③1000元爱眼基金</br>④在线报名获取98元抢购价值980元防蓝光眼镜机会</br> </p>-->
+  <!-- <form name="myform" action="http://baoming.maidige.com/formguide/index2.php" method="post" enctype="multipart/form-data">
+    <dl>
+      <dd>
+        姓名：<input type="text" name="info[name]" id="name" class="wtext" onFocus="if (value =='请在此处输入姓名'){value =''}" onBlur="if (value ==''){value='请在此处输入姓名'}">
+      </dd>
+      <dd>
+       电话：<input type="text" name="info[phone]" id="phone"  class="wtext" onFocus="if (value =='请在此处输入家长电话'){value =''}" onBlur="if (value ==''){value='请在此处输入家长电话'}">
+      </dd>
+      <dd>
+       学校：<input type="text" name="info[jinshi]" id="jinshi"  class="wtext" onFocus="if (value =='请在此处输入学校名称'){value =''}" onBlur="if (value ==''){value='请在此处输入学校名称'}">
+      </dd>
+            <dd style="display:none">
+        <input style="display:none" type="text" name="info[city]" id="city" value="西安" class="wtext">
+      </dd>
+      <dd style="display:none">
+        <input style="display:none" type="text" name="info[media]" id="media" value="奖学金" class="wtext">
+      </dd>
+      <dd style="display:none">
+        <input style="display:none" type="text" name="info[activity]" id="activity" value="奖学金" class="wtext">
+      </dd>
+      <dd style="display:none" >
+        <input type="hidden" name="dataid" value="">
+      </dd>
+      <dd style="display:none">
+        <input type="hidden" name="formid" value="1">
+      </dd>
+      <dd>
+        <input type="submit" name="dosubmit" value="点 击 报 名" class="submitBtn">  <input  type="reset" name="reset" value="重填" class="submitBtn2">
+      </dd>
+     
+    </dl>
+  </form>-->
+  <!-- <a href="http://www.maidige.com" target="_blank">点击报名</a>--> </div>  
+  <div class="wcontent">
+  <img src="img/a_03.jpg">
+  <!--
+<img src="images/a_01.jpg"><img src="images/a_02.jpg"><img src="images/a_03.jpg"><img src="images/a_04.jpg"><img src="images/a_05.jpg"><img src="images/a_06.jpg"><img src="images/a_07.jpg"><img src="images/a_08.jpg">-->
+<!-- <img src="images/a_09.jpg"><img src="images/a_10.jpg"><img src="images/a_11.jpg">-->
+  </div>
+</body>
+</html>

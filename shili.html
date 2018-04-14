@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" style="font-size: 33.75px;">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>在线视力自测中心</title>
+<meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" name="viewport">
+<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1" media="(device-height: 568px)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="address=no">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body style="font-size: 12px;">
+<header> 在线视力自测中心中心提示您</br>
+  先测右眼：眼睛和手机保持平视，相距40厘米，捂住左眼，选择E的朝向</header>
+<div style='margin:0 auto;display:none;'> <img src='img/logo.jpg' /> </div>
+
+<!--视力表-->
+<ul class="seeing clearfix">
+  <li class="seeing_left">3.4</li>
+  <li class="seeing_center">
+    <div style="width: 45%; height: 45%; margin-left: -22.5%; margin-top: -22.5%;"><img src="img/4.png" alt="" class="seeing_img"></div>
+  </li>
+  <li class="seeing_right">0.025</li>
+</ul>
+<!--状态-->
+<div class="wtishi">温馨提示：可滑动至您认为视力结果处开始</div>
+<div class="status"><img src="img/yes.png" alt=""><img src="img/no.png" alt=""><img src="img/no.png" alt=""><img src="img/no.png" alt=""></div>
+<!--刻度线-->
+
+<div class="line">
+  <ul class="scale_line">
+    <li>
+      <div> <span>3.0</span> <span>0.01</span> </div>
+    </li>
+    <li>
+      <div> <span>3.1</span> <span>0.012</span> </div>
+    </li>
+    <li>
+      <div> <span>3.2</span> <span>0.15</span> </div>
+    </li>
+    <li>
+      <div> <span>3.3</span> <span>0.02</span> </div>
+    </li>
+    <li>
+      <div> <span class="active">3.4</span> <span class="active">0.025</span> </div>
+    </li>
+    <li class="plus">
+      <div class="active"> <span class="">3.5</span> <span class="">0.03</span> </div>
+    </li>
+    <li>
+      <div> <span>3.6</span> <span>0.04</span> </div>
+    </li>
+    <li>
+      <div> <span>3.7</span> <span>0.05</span> </div>
+    </li>
+    <li>
+      <div> <span>3.8</span> <span>0.06</span> </div>
+    </li>
+    <li>
+      <div> <span>3.9</span> <span>0.08</span> </div>
+    </li>
+    <li>
+      <div> <span>4.0</span> <span>0.1</span> </div>
+    </li>
+    <li>
+      <div> <span>4.1</span> <span>0.12</span> </div>
+    </li>
+    <li>
+      <div> <span>4.2</span> <span>0.15</span> </div>
+    </li>
+    <li>
+      <div> <span>4.3</span> <span>0.2</span> </div>
+    </li>
+    <li>
+      <div> <span>4.4</span> <span>0.25</span> </div>
+    </li>
+    <li>
+      <div> <span>4.5</span> <span>0.3</span> </div>
+    </li>
+    <li>
+      <div> <span>4.6</span> <span>0.4</span> </div>
+    </li>
+    <li>
+      <div> <span>4.7</span> <span>0.5</span> </div>
+    </li>
+    <li>
+      <div> <span>4.8</span> <span>0.6</span> </div>
+    </li>
+    <li>
+      <div> <span>4.9</span> <span>0.8</span> </div>
+    </li>
+    <li>
+      <div> <span>5.0</span> <span>1.0</span> </div>
+    </li>
+    <li>
+      <div> <span>5.1</span> <span>1.2</span> </div>
+    </li>
+    <li>
+      <div> <span>5.2</span> <span>1.5</span> </div>
+    </li>
+  </ul>
+</div>
+<!--方向-->
+<div class="direction"> <span class="direction_up" direction="1"> <img src="img/up.png" alt=""></span> <span class="direction_down" direction="2"> <img src="img/down.png" alt=""></span> <span class="direction_left" direction="3"> <img src="img/left.png" alt=""></span> <span class="direction_right" direction="4"> <img src="img/right.png" alt=""></span> </div>
+<script src="js/hm.js"></script><script src="js/jquery-2.1.1.min.js" type="text/javascript"></script> 
+<script src="js/htmlFontSize.js"></script> 
+<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script> 
+<script>
+        $(function () {
+            var _index = 5;//默认栏目
+            var arr = [1, 2, 3, 4];//方向数组
+            var see = [100, 98.6, 71.1, 56.7, 45, 35.6, 28.3, 22.8, 17.8, 14.5, 11.1, 8.9, 7.2, 5.6, 4.4, 3.3, 2.8, 2.2, 1.7, 1.7, 1.1, 1.1, 0.49, 0.25];//E大小
+            var index = 1;//随机数
+            var direction_num = 0;//方向
+            var $index = 0;//索引
+            var count = 0;//对的次数
+            var count_error = 0;//对的次数
+            var plus = [];//视力栏目
+
+            scale_line_click(_index);
+            //生成随机数
+            var kk = 0;
+            function random_number() {
+                index = Math.floor((Math.random() * arr.length)) + 1;
+                if (kk == index) {
+                    random_number();
+                } else {
+                    kk = index;
+                    //console.log(index);
+                    $(".seeing_center div").empty().append('<img src="img/' + index + '.png" alt="" class="seeing_img">');
+                }
+            }
+            function scale_line_click(_index) {
+                $(".scale_line li").on("click", function () {
+                    random_number();
+                    $index = $(this).index();
+                    $(".line").scrollLeft($index * 70);
+                    $(".status").empty();
+                    count_error = 0;
+                    count = 0;
+                    $(".seeing_center div").css({
+                        "width": see[$index] + "%",
+                        "height": see[$index] + "%",
+                        "margin-left": -(see[$index] / 2) + "%",
+                        "margin-top": -(see[$index] / 2) + "%"
+                    });
+                    //左右两边内容
+                    $(".seeing_left").html($(this).find("span:first-child").text());
+                    $(".seeing_right").html($(this).find("span:last-child").text());
+                    //高亮
+                    $(this).find("span").addClass("active").parents("div").parents("li").siblings().children("div").children("span").removeClass("active");
+
+                }).eq(_index).trigger("click");
+            }
+            /*箭头*/
+            $(".direction span").on("click", function () {
+                direction_num = $(this).attr("direction");
+                //console.log(direction);
+                //console.log($index);
+                _direction(direction_num);
+
+            });
+            /*滑动*/
+            $(".seeing_center").swipe({
+                swipeStatus: function (event, phase, direction, distance, duration, fingerCount) {
+                    if (distance > 100) {
+                        _direction(direction);
+                    }
+                }
+            });
+            /*箭头  滑动方向*/
+            function _direction(direction) {
+                if (index == direction) {
+                    count++;
+                    //提示
+                    $(".status").append('<img src="img/yes.png" alt="">');
+                    if (count == 3) {//当前测试栏连续对3个
+                        $(".scale_line li").eq($index).find("div").addClass("active_yes");
+                        if ($index == 22) {//最后一个测试栏连续测试对3个则测试结束。
+                            seeing($(".scale_line li").eq(22).find("span:last-child").text());
+                            //console.log("测试结束");
+                            return false;
+                        } else {
+                            if ($(".scale_line li").eq($index + 1).find("div").hasClass("active_no")) {//如果下个测试栏为已测过的错误测试栏，则测试结束。
+                                vote();
+                                //console.log("测试结束");
+                                return false;
+                            } else {//否则进入下个测试栏
+                                $(".status").empty();
+                                console.log("下一个");
+                                var dd = $index + 1;
+                                scale_line_click(dd);
+                                count = 0;
+                            }
+                        }
+                    }
+                    random_number();
+                } else {
+                    count_error++;
+                    count = 0;
+                    $(".status").append('<img src="img/no.png" alt="">');
+                    if (count_error == 4) {//当前测试栏累计错4个
+                        $(".scale_line li").eq($index).addClass("plus").find("div").addClass("active_no");
+                        if ($index == 0) {//第一个测试栏累计错4个则测试结束
+                            seeing($(".scale_line li").eq(0).find("span:last-child").text());
+                            //console.log("测试结束");
+                            return false;
+                        } else {
+                            if ($(".scale_line li").eq($index - 1).find("div").hasClass("active_yes")) {//如果上个测试栏为已测过的正确测试栏，则测试结束。
+                                vote();
+                                //console.log("测试结束");
+                                return false;
+                            } else {//进入上个测试栏
+                                $(".status").empty();
+                                //console.log("上一个");
+                                var dd = $index - 1;
+                                scale_line_click(dd);
+                                count = 0;
+                            }
+                        }
+                    }
+                    random_number();
+                }
+            }
+
+            /*确定视力栏目*/
+            function vote() {
+                $(".scale_line li").each(function () {
+                    if ($(this).find("div").hasClass("active_yes")) {
+                        plus.push($(this).index());
+                    }
+                });
+                //console.log(plus);
+                //console.log(Math.max.apply(null, plus));
+                var vote_num = Math.max.apply(null, plus);
+                var vote_content = $(".scale_line li").eq(vote_num).find("span:last-child").text();
+                seeing(vote_content);
+            }
+            /*视力结果*/
+            function seeing(vote_content) {
+                window.location.href = "result.html?result=" + vote_content;
+                console.log("你的视力是" + vote_content);
+            }
+        });
+    </script>
+</body>
+</html>
